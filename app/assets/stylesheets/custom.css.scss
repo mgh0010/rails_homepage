@@ -67,6 +67,11 @@ $secondary-color: color("blue-grey", "base") !default;
   top: calc(50% - 15px); /* 50% - 3/4 of icon height */
 }
 
-.icon {
-  align: center;
+.ribbon-col > a {
+  text-decoration: none;
+  color: black;
+}
+
+.ribbon-col > a:hover {
+  color: white;
 }
