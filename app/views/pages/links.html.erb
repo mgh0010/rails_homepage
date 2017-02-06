@@ -7,32 +7,81 @@
 </head>
 <body>
   <div>
-    <div class="section title-section #424242 grey darken-3">
-      <h4 class ='title-text'>
+    <div class="section links-section black">
+      <h4 class ='title-text white-text'>
           Hang a while and chill
       </h4>
-    </div> 
-    <div class="section links-section black">
+      <div class='divider grey darken-2'></div>
       <div class='row'>
         <div class='col s12 m4'>
-          <h2 class="white-text header">Parallax</h2>
-          <p class="white-text centered-txt text-darken-3 lighten-3">
-            Parallax is an effect where the background content or image in this case, 
-            is moved at a different speed than the foreground content while scrolling.
-          </p>  
+          <h3 class="white-text header">School</h3>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://outlook.office.com/owa/?realm=tigermail.auburn.edu" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Tigermail</a>
+              <a href="https://auburn.instructure.com/?login_success=1" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Canvas</a>
+              <a href="https://auaccess.auburn.edu/" 
+                  target='blank'
+                  class="collection-item teal lighten-2 black-text">Au Access</a>
+            </div>
+          </div>
         </div>
         <div class='col s12 m4'>
-          
+          <h3 class="white-text header">Work</h3>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://mail.google.com/mail/u/0/#inbox" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Gmail</a>
+              <a href="https://drive.google.com/drive/my-drive" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Google Drive</a>
+            </div>  
+          </div>
         </div>
         <div class='col s12 m4'>
-          
+          <h3 class="white-text header">Time-wasters</h3>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://www.facebook.com/" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Facebook</a>
+              <a href="https://www.youtube.com/" 
+                  target='_blank'
+                  class="collection-item teal lighten-2 black-text">Youtube</a>
+            </div>
+          </div>
         </div>
-        
+      </div>
+      
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <%= image_tag "bjjthrow.jpg" %> 
+              <span class="card-title">
+                <h2 >
+                  Wrecked
+                </h2>
+              </span>
+            </div>
+            <div class="card-content">
+              <p>Learn you some BJJ</p>
+            </div>
+            <div class="card-action grey darken-2">
+              <a href="https://www.youtube.com/results?search_query=mendes+brothers">Videos</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
     <div class="parallax-container">
       <div class="parallax AnA-parallax">
-        <%= image_tag("bjjthrow.jpg") %>
+        <%= image_tag "bjjthrow.jpg" %> 
         </div>
     </div>
   </div>

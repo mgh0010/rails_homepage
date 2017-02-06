@@ -5,7 +5,6 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .logo {
   margin-left: 40px;
-  color: black;
 }
 
 .centered-txt {
@@ -17,7 +16,7 @@ $secondary-color: color("blue-grey", "base") !default;
 }
 
 .links-section {
-  height: 500px;
+  height: 1000px;
 }
 
 .title-section {
@@ -27,6 +26,7 @@ $secondary-color: color("blue-grey", "base") !default;
 .title-text {
   text-align: center;
   color: white;
+  padding-bottom: 10px;
 }
 
 .AnA-parallax {
@@ -34,4 +34,9 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .header {
   text-align: center;
+}
+
+.links-container {
+  padding-left: 10px;
+  padding-right: 10px;
 }
