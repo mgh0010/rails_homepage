@@ -59,4 +59,14 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .ribbon-col {
   height: 60px;
+  text-align: center;
+}
+
+.ribbon-col > a > i {
+  position: relative;
+  top: calc(50% - 15px); /* 50% - 3/4 of icon height */
+}
+
+.icon {
+  align: center;
 }
