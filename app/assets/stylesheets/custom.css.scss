@@ -4,7 +4,6 @@ $secondary-color: color("blue-grey", "base") !default;
 @import 'materialize';
 
 .logo {
-  margin-left: 40px;
 }
 
 .centered-txt {
@@ -40,4 +39,22 @@ $secondary-color: color("blue-grey", "base") !default;
 .links-container {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.ribbon-section {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.ribbon-row {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.ribbon-col {
+  height: 60px;
 }
