@@ -1,20 +1,37 @@
-$navbar-default-bg: black;
+@import "materialize/components/color";
+$primary-color: color("red", 'base') !default;
+$secondary-color: color("blue-grey", "base") !default;
+@import 'materialize';
 
-
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-
-.links-header {
-    text-align: center;
+.logo {
+  margin-left: 40px;
+  color: black;
 }
 
-#logo {
-    float: left;
-    font-size: 1.7em;
-    color: #fff;
-    text_transform: uppercase;
-    letter-spacing: -1px;
-    font-weight: bold;
+.centered-txt {
+  text-align: center;
+}
+
+.parallax-container {
+  height: 500px;
+}
+
+.links-section {
+  height: 500px;
+}
+
+.title-section {
+  height: 100px;
+}
+ 
+.title-text {
+  text-align: center;
+  color: white;
+}
+
+.AnA-parallax {
+}
+
+.header {
+  text-align: center;
 }
