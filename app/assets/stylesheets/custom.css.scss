@@ -1,6 +1,6 @@
 @import "materialize/components/color";
 $primary-color: color("red", 'base') !default;
-$secondary-color: color("blue-grey", "base") !default;
+$secondary-color: color("grey", "base") !default;
 @import 'materialize';
 
 .logo {
@@ -16,7 +16,6 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .links-section {
   padding-top: 0px;
-  height: 1500px;
 }
 
 .title-section {
@@ -27,6 +26,7 @@ $secondary-color: color("blue-grey", "base") !default;
   margin-top: 0px;
   text-align: center;
   padding-bottom: 10px;
+  @extend .grey-text, .text-darken-4;
 }
 
 .AnA-parallax {
@@ -34,7 +34,7 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .header {
   text-align: center;
-  color: grey;
+  @extend .grey-text, .text-darken-3;
 }
 
 .links-container {
