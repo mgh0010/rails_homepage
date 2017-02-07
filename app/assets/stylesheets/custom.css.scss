@@ -16,7 +16,7 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .links-section {
   padding-top: 0px;
-  height: 1000px;
+  height: 1500px;
 }
 
 .title-section {
@@ -74,4 +74,8 @@ $secondary-color: color("blue-grey", "base") !default;
 
 .ribbon-col > a:hover {
   color: white;
+}
+ 
+.black-container {
+  background: black;
 }
