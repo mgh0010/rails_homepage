@@ -34,6 +34,7 @@ $secondary-color: color("grey", "base") !default;
 
 .header {
   text-align: center;
+  
   @extend .grey-text, .text-darken-3;
 }
 
@@ -80,7 +81,7 @@ $secondary-color: color("grey", "base") !default;
 }
 
 .div-above-aside {
-  height: 100px;
+  height: 50px;
 }
 
 .body > .container {
