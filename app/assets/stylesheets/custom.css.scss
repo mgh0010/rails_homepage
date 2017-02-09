@@ -37,7 +37,7 @@ $secondary-color: color("grey", "base") !default;
   @extend .grey-text, .text-darken-3;
 }
 
-.links-container {
+.links-collection {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -73,4 +73,15 @@ $secondary-color: color("grey", "base") !default;
 
 .ribbon-col > a:hover {
   color: white;
+}
+
+.aside-col {
+  margin-left: 20px;
+}
+
+.div-above-aside {
+  height: 100px;
+}
+
+.body > .container {
 }
