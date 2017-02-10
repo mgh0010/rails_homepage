@@ -3,9 +3,6 @@ $primary-color: color("red", 'base') !default;
 $secondary-color: color("grey", "base") !default;
 @import 'materialize';
 
-.logo {
-}
-
 .centered-txt {
   text-align: center;
 }
@@ -29,12 +26,8 @@ $secondary-color: color("grey", "base") !default;
   @extend .grey-text, .text-darken-4;
 }
 
-.AnA-parallax {
-}
-
 .header {
   text-align: center;
-  
   @extend .grey-text, .text-darken-3;
 }
 
@@ -48,6 +41,10 @@ $secondary-color: color("grey", "base") !default;
   padding-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+}
+
+p {
+  @extend .flow-text;
 }
 
 .ribbon-row {
@@ -74,6 +71,11 @@ $secondary-color: color("grey", "base") !default;
 
 .ribbon-col > a:hover {
   color: white;
+}
+
+.collection
+a.collection-item {
+  @extend .teal-text, .text-lighten-2
 }
 
 .aside-col {
