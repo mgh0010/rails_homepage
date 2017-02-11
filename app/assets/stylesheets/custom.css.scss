@@ -47,11 +47,30 @@ p {
 }
 
 .ribbon-col {
-  height: 60px;
+  height: 5em;
   text-align: center;
 }
 
 .ribbon-col > a > i {
+  position: relative;
+  top: calc(50% - 15px); /* 50% - 3/4 of icon height */
+}
+
+.tile-container {
+}
+
+.square-col {
+  text-align: center;
+  padding: 0 .1em;
+}
+
+.square {
+  height: 9em;
+  margin: .1em;
+  @extend .hoverable;
+}
+
+.square > i {
   position: relative;
   top: calc(50% - 15px); /* 50% - 3/4 of icon height */
 }
