@@ -3,24 +3,16 @@ $primary-color: color("red", 'base') !default;
 $secondary-color: color("grey", "base") !default;
 @import 'materialize';
 
+.parallax img{
+  display: inherit !important;
+}
+
 .centered-txt {
   text-align: center;
 }
 
-.parallax-container {
-  height: 500px;
-}
-
-.links-section {
-  padding-top: 0px;
-}
-
-.title-section {
-  height: 100px;
-}
- 
 .title-text {
-  margin-top: 0px;
+  padding-top: 1em;
   text-align: center;
   padding-bottom: 10px;
   @extend .grey-text, .text-darken-4;
