@@ -10,6 +10,8 @@ end
 
 group :production do
   gem 'pg'
+  #used to make paths accessible on heroku
+  gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
@@ -33,9 +35,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-#used to make paths accessible on heroku
-gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
