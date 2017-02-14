@@ -72,12 +72,12 @@ p {
   top: calc(50% - 15px); /* 50% - 3/4 of icon height */
 }
 
-.row-links-and-aside > .ribbon-col > a {
+.ribbon-col > a {
   text-decoration: none;
   color: black;
 }
 
-.row-links-and-aside > .ribbon-col > a:hover {
+.ribbon-col > a:hover {
   color: white;
 }
 
@@ -94,3 +94,22 @@ a.collection-item {
 .div-above-aside {
   height: 50px;
 }
+
+/* label color */
+ .input-field label {
+   @extend .grey-text, .text-darken-2
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   @extend .teal-text
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid; 
+   @extend .teal-text, .text-lighten-2;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ 
+ .btn {
+   background-color: #26a69a;
+ }
