@@ -23,10 +23,6 @@
       $('#link_url_label').removeClass('active');
     });
   });
-  
-  $(document).ready(function() {
-    Materialize.updateTextFields();
-  });
 </script>
 <!- end of scripts ->
 
@@ -37,20 +33,25 @@
       <div class='col s12'>
         
         <!- input fields ->
-        <div class='input-field col s6 offset-s3'>
+        <div class='input-field col s12'>
           <input class='' id='link_title' type='text'>
           <label class='string' id='link_title_label' for='link_title'>Title</label>
         </div>
         
-        <div class='input-field col s6 offset-s3'>
+        <div class='input-field col s12'>
           <input class='' id='link_url' type='text'>
           <label class='string' id='link_url_label' for='link_url'>URL</label>
         </div>
         <!- end of input fields ->
         
-        <div class="actions col s6 offset-s7">
-          <button class="btn waves-effect waves-light " type="submit" name="action">Create Link</button>
+        <div class='row'>
+          <div class="col s6 offset-s6 actions ">
+            <button class="btn waves-effect waves-light " type="submit" name="action">Create Link</button>
+            <a href= '/links' class="waves-effect waves-teal btn-flat">Back</a>
+            <br/><br/>
+          </div>  
         </div>
+        
       </div>
     </div>
     
