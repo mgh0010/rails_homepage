@@ -83,7 +83,7 @@ p {
 
 .collection
 a.collection-item {
-  @extend .teal-text, .text-lighten-2
+  @extend .grey-text, .text-darken-1;
   
 }
 
@@ -109,6 +109,7 @@ a.collection-item {
    @extend .teal-text, .text-lighten-2;
    box-shadow: 0 1px 0 0 #000;
  }
+ 
  
  .btn {
    background-color: #26a69a;
