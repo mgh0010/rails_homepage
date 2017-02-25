@@ -1,23 +1,27 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="assets/stylesheets/materialize.min.css"  media="screen,projection"/>
+   <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
   <script>
-  (function($){
-    (function(){
-      ('.parallax').parallax();
-    });
-  })(jQuery);  
+  $(document).ready(function(){
+      $('.parallax').parallax();
+    })(jQuery);  
   </script>
   
 <header></header>
 </head>
 <body> 
   
-  <!-- parralax 
+  <!- parralax ->
   <div class="parallax-container">
     <div class="parallax top-parallax"><%= image_tag 'handstand.png' %></div>
   </div>  
-   end of parralax -->
+  <!- end of parralax ->
   
   <!- main and aside -->
   <div class='row links-and-aside'>
@@ -84,42 +88,6 @@
         <div class='divider grey darken-2'></div>
         <br/>
         
-        <!-- square section 
-        <div class='row'>
-          <div class='col s4 square-col'>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-          <div class='col s4 square-col '>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-          <div class='col s4 square-col '>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-          <div class='col s4 square-col '>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-          <div class='col s4 square-col '>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-          <div class='col s4 square-col '>
-            <div class='square teal lighten-2'>
-              <i class='medium material-icons'>person_pin</i>
-            </div>
-          </div>
-        </div>
-        
-        <!- end of square section -->
-      
       </div>
       
     </div> 
@@ -130,7 +98,7 @@
     <!- aside --> 
     <div class="col s12 m12 l4">
       
-      <!- ribbon content -->
+      <!-- ribbon content ->
       <div class='section ribbon-section'>
         <div class='row ribbon-row hide-on-small-only'>
           
@@ -199,4 +167,5 @@
   
 </body>
 
+  
 </html>

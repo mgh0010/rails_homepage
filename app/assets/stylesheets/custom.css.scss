@@ -1,10 +1,9 @@
-@import "materialize/components/color";
+@import 'materialize';
 $primary-color: color("red", 'base') !default;
 $secondary-color: color("grey", "base") !default;
-@import 'materialize';
 
-.parallax img{
-  display: inherit !important;
+.parallax-container {
+  height: 20em !important;
 }
 
 .centered-txt {
@@ -125,4 +124,8 @@ a.collection-item {
  
  .actions {
    margin-top: 2em;
+ }
+ 
+ .dark-text {
+   @extend .grey-text, .text-darken-4;
  }
