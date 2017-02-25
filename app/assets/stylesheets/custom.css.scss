@@ -3,7 +3,15 @@ $primary-color: color("red", 'base') !default;
 $secondary-color: color("grey", "base") !default;
 
 .parallax-container {
-  height: 20em !important;
+  height: auto !important;
+}
+
+.aa-parallax {
+  height: auto !important;
+}
+
+.handstand-parallax {
+  height: 30em !important;
 }
 
 .centered-txt {
@@ -129,3 +137,8 @@ a.collection-item {
  .dark-text {
    @extend .grey-text, .text-darken-4;
  }
+ 
+ .light-text {
+   @extend .grey-text, .text-lighten-4;
+ }
+ 

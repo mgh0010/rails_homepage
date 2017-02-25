@@ -17,25 +17,22 @@
 </head>
 <body> 
   
-  <!- parralax ->
-  <div class="parallax-container">
-    <div class="parallax top-parallax"><%= image_tag 'handstand.png' %></div>
-  </div>  
-  <!- end of parralax ->
   
-  <!- main and aside -->
-  <div class='row links-and-aside'>
+  <!- main content -->
+  <main>
     
-    <!- main content -->
-    <main>
-    <div class="section col s12 m12 l8">
+  <!- parralax ->
+  <div class="parallax-container main-parallax">
+    <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
+
+    <div class="section col s12 m12">
+        
       <div class='container'>
         
         <!- header -->
         <h3 class ='title-text'>
           Hang a while and chill, dawg
         </h3>
-        <div class='divider grey darken-2'></div>
         <br/>
         <!- end of header -->
       
@@ -78,56 +75,42 @@
                     class="collection-item ">Facebook</a>
                 <a href="https://www.youtube.com/" 
                     class="collection-item ">Youtube</a>
+                <a href="https://cronometer.com/#diary" 
+                    class="collection-item ">CRON-O-Meter</a>
               </div>
             </div>
           </div>  
+          
         </div>
         <!- end of links collections -->
         
         <br/>
-        <div class='divider grey darken-2'></div>
         <br/>
         
       </div>
-      
     </div> 
-    
-    </main>
-    <!- end of main content -->
-    
-    <!- aside --> 
-    <div class="col s12 m12 l4">
-      
-      <!-- ribbon content ->
-      <div class='section ribbon-section'>
-        <div class='row ribbon-row hide-on-small-only'>
+  </div>  
+  <!- end of parralax ->
+  
+  </main>
+  <!- end of main content -->
+  
+  <!- cards --> 
+  <!- title ->
+  <div class='container'>
+    <div class='divider'></div>
+    <div class='section'>
+      <div class='row'>
+        <div class='col s6'>
           
-          <div class='col s4 teal lighten-2 ribbon-col hoverable'>
-            <a href='https://www.google.com' >
-              <i class='small material-icons'>person_pin</i>
-            </a>
-          </div>
-          
-          <div class='col s4 red ribbon-col hoverable'>
-            <a href='https://www.google.com' >
-              <i class='small material-icons'>person_pin</i>
-            </a>
-          </div>
-          
-          <div class='col s4 grey darken-1 ribbon-col hoverable'>
-            <a href='https://www.google.com' >
-              <i class='small material-icons'>person_pin</i>
-            </a>
-          </div>
         </div>
       </div>
-      <!- end of ribbon content --> 
+    </div>
+  </div>
+  <!- end of title ->
   
-      <div class='col m12 div-above-aside'></div>
-      <br/>
-      <br/>
-    
-      <!- cards --> 
+  <div class='row'>
+    <div class='col s12 m5 offset-m1'>
       <div class="card hoverable">
         <div class="card-image">
           <%= image_tag "rafa-miyao.jpg" %> 
@@ -142,7 +125,9 @@
               target='_blank'>Videos</a>
         </div>
       </div>
-      
+    </div>
+    
+    <div class='col s12 m5 '>
       <div class="card hoverable">
         <div class="card-image">
           <%= image_tag "lionandthelamb.jpg" %> 
@@ -156,14 +141,20 @@
           <a href="https://www.youtube.com/watch?v=uMFt6sjPATw&index=1&list=FLvTkwJNdtJq4E3_lzgehGBw"
               target='_blank'>Videos</a>
         </div>
-      </div>
-      <!- end of cards --> 
-    
-    </div> 
-    <!- end of aside --> 
-    
+      </div>  
+    </div>
   </div>
-  <!- end of main and aside -->
+  
+  <!- end of cards --> 
+
+  <!- parralax ->
+  <div class="parallax-container">
+    <div class='handstand-parallax'>
+      <div class="parallax"><%= image_tag 'fox2.jpg' %></div>
+    </div>
+  </div>  
+  <!- end of parralax ->
+  
   
 </body>
 
