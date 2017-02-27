@@ -3,14 +3,21 @@
 <div class='navbar-fixed'>
   <nav>
     <div class="nav-wrapper grey darken-3">
-      <%= link_to "Relax dawg", root_path, class: 'brand-logo logo light-text', id: 'logo' %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href=""><i class="material-icons">search</i></a></li>
-        <li><a href=""><i class="material-icons">view_module</i></a></li>
-        <li><a href=""><i class="material-icons">refresh</i></a></li>
-        <li><a href=""><i class="material-icons">more_vert</i></a></li>
-      </ul>
-      </ul>
+      <div class='row'>
+        <div class='col l1 '>
+          <%= link_to "Relax dawg", root_path, class: 'brand-logo logo light-text', id: 'logo' %>
+        </div>
+        <div class='col l11 right'>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="food.html.erb"><i class="material-icons">store</i></a></li>
+            <li><a href=""><i class="material-icons">view_module</i></a></li>
+            <li><a href=""><i class="material-icons">refresh</i></a></li>
+            <li><a href=""><i class="material-icons">more_vert</i></a></li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+      
     </div>
   </nav> 
 </div>

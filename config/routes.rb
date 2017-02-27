@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   root 'pages#links'
+  get 'food.html.erb', to: 'pages#food'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
