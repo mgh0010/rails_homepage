@@ -4,4 +4,7 @@ class PagesController < ApplicationController
     
     def food
     end
+    
+    def aboutme
+    end
 end
