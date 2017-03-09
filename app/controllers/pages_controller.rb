@@ -7,4 +7,7 @@ class PagesController < ApplicationController
     
     def aboutme
     end
+    
+    def finalexamcalc
+    end
 end
