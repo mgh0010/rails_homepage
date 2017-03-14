@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       
   <script>
-    var displaying_question = true;
-    
     $(document).ready(function(){
       $('.parallax').parallax();
     })(jQuery);  
@@ -15,26 +13,11 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     };
     
-    
-    async function tellJoke(){
+    document.getElementById('joke-btn').onclick = async function(){
       $('#joke-txt').addClass('scale-out');
-      $('#joke-txt').removeClass('scale-in');
-      
-      if(displaying_question){
-        document.getElementById('joke').innerHTML = 'You just need to jump higher.';
-        document.getElementById('joke-btn').innerHTML = 'lol. Again!'
-        await sleep(300);
-        displaying_question = false;
-      }
-      else {
-        document.getElementById('joke').innerHTML = 'What did the red lizard say to the cat?';
-        document.getElementById('joke-btn').innerHTML = 'Tell me!'
-        await sleep(300);
-        displaying_question = true;
-      }
-      
+      document.getElementById('joke').innerHTML = 'You just need to jump higher.';
+      await sleep(50);
       $('#joke-txt').addClass('scale-in');
-      $('#joke-txt').removeClass('scale-out');
     };
     
   </script>
@@ -55,7 +38,7 @@
       <div class='container'>
         
         <!- joke ->
-        <h2 class='joke-title-txt'>
+        <h2 class='title-text'>
           Joke of the Day
         </h2>
         <div class='divider'></div>
@@ -65,15 +48,18 @@
           </span>
         </h4>
         <div class='col offset-s8'>
-          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'>Tell me!</a>
+          <a class="waves-effect waves-green btn-flat" id='joke-btn'>Tell me!</a>
         </div>
       </div>
      </div> 
         <!- end of joke ->
         
+      <div class='row'>
+        <div class=' divider col s4 offset-s4'></div>
+      </div>
       
       <!- links collections -->
-      <div class='row links-row'>
+      <div class='row'>
         <div class='col s12 m12 l4'>
           <h5 class="header">Work</h5>
           <div class='links-container'>

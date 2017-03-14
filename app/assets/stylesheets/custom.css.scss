@@ -25,14 +25,25 @@ $secondary-color: color("grey", "base") !default;
   @extend .grey-text, .text-darken-4;
 }
 
+.joke-title-txt {
+  padding-top: .5em;
+  text-align: center;
+  @extend .grey-text, .text-darken-4;
+}
+
 .header {
   text-align: center;
   @extend .grey-text, .text-darken-3;
 }
 
+
 .links-collection {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.links-row {
+  margin-top: 3em;
 }
 
 .ribbon-section {
@@ -161,4 +172,8 @@ a.collection-item {
  
  .red-car {
    background-color: #B2473E;
+ }
+ 
+ #joke-txt {
+   margin-top: 1em;
  }
