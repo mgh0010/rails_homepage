@@ -22,11 +22,15 @@ $secondary-color: color("grey", "base") !default;
   padding-top: .5em;
   text-align: center;
   padding-bottom: 10px;
+  margin-top: 0em;
   @extend .grey-text, .text-darken-4;
 }
 
+.title-div {
+  background-color: #BBC47F;
+}
+
 .joke-title-txt {
-  padding-top: .5em;
   text-align: center;
   @extend .grey-text, .text-darken-4;
 }
