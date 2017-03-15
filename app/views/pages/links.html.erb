@@ -19,13 +19,13 @@
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.getElementById('joke').innerHTML = 'You just need to jump higher.';
+        document.getElementById('joke').innerHTML = "Because they're really good at it.";
         document.getElementById('joke-btn').innerHTML = 'lol. Again!'
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.getElementById('joke').innerHTML = 'What did the red lizard say to the cat?';
+        document.getElementById('joke').innerHTML = 'Why do you never see Elephants hiding in trees?';
         document.getElementById('joke-btn').innerHTML = 'Tell me!'
         await sleep(300);
         displaying_question = true;
@@ -59,7 +59,7 @@
         <div class='divider'></div>
         <h4 class='center scale-transition' id='joke-txt'>
           <span id='joke'>
-          What did the red lizard say to the cat?
+          Why do you never see Elephants hiding in trees?
           </span>
         </h4>
         <div class='col offset-s6 offset-m7'>
