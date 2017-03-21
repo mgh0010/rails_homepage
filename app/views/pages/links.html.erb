@@ -19,13 +19,13 @@
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.getElementById('joke').innerHTML = "Because they're really good at it.";
+        document.getElementById('joke').innerHTML = "Because they have big fingers.";
         document.getElementById('joke-btn').innerHTML = 'lol. Again!'
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.getElementById('joke').innerHTML = 'Why do you never see Elephants hiding in trees?';
+        document.getElementById('joke').innerHTML = 'Why do gorillas have big nostrils?';
         document.getElementById('joke-btn').innerHTML = 'Tell me!'
         await sleep(300);
         displaying_question = true;
@@ -59,7 +59,7 @@
         <div class='divider'></div>
         <h4 class='center scale-transition' id='joke-txt'>
           <span id='joke'>
-          Why do you never see Elephants hiding in trees?
+          Why do gorillas have big nostrils?
           </span>
         </h4>
         <div class='col offset-s6 offset-m7'>
