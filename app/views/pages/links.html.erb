@@ -1,6 +1,5 @@
 <html>
 <head>
-
       
   <script>
     var displaying_question = true;
@@ -19,13 +18,13 @@
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.getElementById('joke').innerHTML = "A completely reasonable combination of seven's dominant nature and six's timid attitude.";
+        document.getElementById('joke').innerHTML = "The doctor described his condition as stable.";
         document.getElementById('joke-btn').innerHTML = 'lol. Again!'
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.getElementById('joke').innerHTML = 'Why was six scared of seven?';
+        document.getElementById('joke').innerHTML = 'A man goes into the hospital with 6 plastic horses up his bum.';
         document.getElementById('joke-btn').innerHTML = 'and?'
         await sleep(300);
         displaying_question = true;
@@ -59,11 +58,11 @@
         <div class='divider'></div>
         <h4 class='center scale-transition' id='joke-txt'>
           <span id='joke'>
-          Why was six scared of seven?
+          A man goes into the hospital with 6 plastic horses up his bum.
           </span>
         </h4>
         <div class='col offset-s6 offset-m7'>
-          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'>Tell Me!</a>
+          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'>And?</a>
         </div>
       </div>
      </div> 
