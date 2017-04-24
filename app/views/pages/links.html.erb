@@ -18,14 +18,14 @@
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.getElementById('joke').innerHTML = "The doctor described his condition as stable.";
-        document.getElementById('joke-btn').innerHTML = 'lol. Again!'
+        document.querySelector('#joke').innerHTML = "The doctor described his condition as stable.";
+        document.querySelector('#joke-btn').innerHTML = 'lol. Again!'
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.getElementById('joke').innerHTML = 'A man goes into the hospital with 6 plastic horses up his bum.';
-        document.getElementById('joke-btn').innerHTML = 'and?'
+        document.querySelector('#joke').innerHTML = 'A man goes into the hospital with 6 plastic horses up his bum.';
+        document.querySelector('#joke-btn').innerHTML = 'and?'
         await sleep(300);
         displaying_question = true;
       }
@@ -159,7 +159,7 @@
         </div>
         <div class="card-action">
           <a href="https://www.youtube.com/results?search_query=mendes+brothers"
-              target='_blank'>Videos</a>
+              target='_blank' color='#81c784'>Videos</a>
         </div>
       </div>
     </div>
