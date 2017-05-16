@@ -2,6 +2,30 @@
 $primary-color: color("red", 'base') !default;
 $secondary-color: color("grey", "base") !default;
 
+.earthlings-row {
+  @extend .red, .darken-1;
+  margin-bottom: 0 !important;
+}
+
+.earthlings-title {
+  text-align: center;
+}
+
+.earthlings-link {
+  text-align: center;
+  @extend .grey-text, .text-darken-2;
+  font-size: 4em;
+}
+
+.vegan-img {
+  height: 3em;
+  widows: 3em;
+}
+
+.earthlings-text {
+  text-align: center;
+}
+
 .parallax-container {
   height: auto !important;
 }
@@ -184,4 +208,8 @@ a.collection-item {
  
  a:link {
    color: #81c784;
+ }
+ 
+ .cards {
+   margin-top: 2em;
  }
