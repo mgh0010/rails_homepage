@@ -18,14 +18,14 @@
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.querySelector('#joke').innerHTML = "The doctor described his condition as stable.";
+        document.querySelector('#joke').innerHTML = "When the punchline becomes apparent.";
         document.querySelector('#joke-btn').innerHTML = 'lol. Again!'
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.querySelector('#joke').innerHTML = 'A man goes into the hospital with 6 plastic horses up his bum.';
-        document.querySelector('#joke-btn').innerHTML = 'and?'
+        document.querySelector('#joke').innerHTML = 'When does a joke become a dad joke?';
+        document.querySelector('#joke-btn').innerHTML = 'When?'
         await sleep(300);
         displaying_question = true;
       }
@@ -57,7 +57,7 @@
         <div class='divider'></div>
         <h4 class='center scale-transition' id='joke-txt'>
           <span id='joke'>
-          A man goes into the hospital with 6 plastic horses up his bum.
+          When does a joke become a dad joke?
           </span>
         </h4>
         <div class='col offset-s6 offset-m7'>
