@@ -1,6 +1,8 @@
 <html>
 <head>
       
+  
+  
   <script>
     var displaying_question = true;
     
@@ -12,20 +14,25 @@
       return new Promise(resolve => setTimeout(resolve, ms));
     };
     
+    // joke variables for reuse
+    <% jokeAnswer = "So there were these two whales, and the one whale says to the other whale. Blooowwwbloooobloowwwblowwwwbloww. and then the other whale goes, blloooowwwwblowolloooolloooooouuauahahhhhahhahahhhh. And then the first whale says back, bloowlbloowlloblwww. and then the other whale responds, wait, what?" %>
+    <% jokeQuestion = "When does a joke become a dad joke?" %>
+    <% jokeBtnQuestion = "When?" %>
+    <% jokeBtnAnswer = "lol. Again!" %>
     
     async function tellJoke(){
       $('#joke-txt').addClass('scale-out');
       $('#joke-txt').removeClass('scale-in');
       
       if(displaying_question){
-        document.querySelector('#joke').innerHTML = "When the punchline becomes apparent.";
-        document.querySelector('#joke-btn').innerHTML = 'lol. Again!'
+        document.querySelector('#joke').innerHTML = '<%= jokeAnswer %>';
+        document.querySelector('#joke-btn').innerHTML = '<%= jokeBtnAnswer %>';
         await sleep(300);
         displaying_question = false;
       }
       else {
-        document.querySelector('#joke').innerHTML = 'When does a joke become a dad joke?';
-        document.querySelector('#joke-btn').innerHTML = 'When?'
+        document.querySelector('#joke').innerHTML = '<%= jokeQuestion %>';
+        document.querySelector('#joke-btn').innerHTML = '<%= jokeBtnQuestion %>';
         await sleep(300);
         displaying_question = true;
       }
@@ -57,11 +64,11 @@
         <div class='divider'></div>
         <h4 class='center scale-transition' id='joke-txt'>
           <span id='joke'>
-          When does a joke become a dad joke?
+          <%= jokeQuestion %>
           </span>
         </h4>
         <div class='col offset-s6 offset-m7'>
-          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'>And?</a>
+          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'>When?</a>
         </div>
       </div>
      </div> 
