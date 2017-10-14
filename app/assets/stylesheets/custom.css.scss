@@ -133,7 +133,8 @@ p {
 
 .collection
 a.collection-item {
-  @extend .grey-text, .text-darken-1;
+  background: rgba(0, 0, 0, 0.3);
+  @extend .grey-text, .text-lighten-3;
   
 }
 
