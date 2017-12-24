@@ -218,3 +218,27 @@ a.collection-item {
  .cards {
    margin-top: 2em;
  }
+ 
+ .terrier-parallax {
+  height: 900px;
+ }
+ 
+.sum-gal-row {
+  @extend .grey, .darken-4;
+  margin-bottom: 0 !important;
+}
+
+ #sum-gal-header {
+   margin: 0;
+   padding-top: 1.5em;
+   padding-bottom: 1em;
+ }
+ 
+ 
+ #sum-gal-body {
+   padding-bottom: 4em;
+ }
+ 
+ .gal-collection {
+    margin-top: 2em !important;
+ }

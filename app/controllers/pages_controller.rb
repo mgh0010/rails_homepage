@@ -10,4 +10,7 @@ class PagesController < ApplicationController
     
     def finalexamcalc
     end
+    
+    def helpfullinks
+    end
 end

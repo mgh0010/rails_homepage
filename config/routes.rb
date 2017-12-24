@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'food.html.erb', to: 'pages#food'
   get 'aboutme.html.erb', to: 'pages#aboutme'
   get 'finalexamcalc.html.erb', to: 'pages#finalexamcalc'
+  get 'helpfullinks.html.erb', to: 'pages#helpfullinks'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
