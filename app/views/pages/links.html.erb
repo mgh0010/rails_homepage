@@ -1,7 +1,6 @@
 <html>
 <head>
   <script>
-
     var displaying_question = true;
     
     $(document).ready(function(){
@@ -11,8 +10,6 @@
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     };
-    
-    
     
     // joke variables for reuse
     <% jokeQuestion = "I travel all over the world, but always stay in my corner. What am I?" %>
@@ -157,6 +154,17 @@
     
     
     
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
+  <!- joke and links -->
+  <main>
+    
   <!- parralax ->
   <div class="parallax-container main-parallax">
     <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
@@ -270,6 +278,25 @@
       </div>
     </div>
   </div>
+      <div class='container'>
+        
+        <!- joke ->
+        <h2 class='joke-title-txt'>
+          Joke of the Week
+        </h2>
+        <div class='divider'></div>
+        <h4 class='center scale-transition' id='joke-txt'>
+          <span id='joke'>
+          <%= jokeQuestion %>
+          </span>
+        </h4>
+        <div class='col offset-s6 offset-m7'>
+          <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'><%= jokeBtnQuestion%></a>
+        </div>
+      </div>
+     </div> 
+        <!- end of joke ->
+        
       
       <!- links collections -->
       <div class='row links-row'>

@@ -15,4 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 /assets/videos/*
+=======
+>>>>>>> 5f2c4e10d85afc646fc5d3037ffaaf114f47dc53

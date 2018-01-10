@@ -174,4 +174,8 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.16.1
+=======
+   1.13.6
+>>>>>>> 5f2c4e10d85afc646fc5d3037ffaaf114f47dc53
