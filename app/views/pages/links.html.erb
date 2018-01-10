@@ -1,0 +1,426 @@
+<html>
+<head>
+  <script>
+
+    var displaying_question = true;
+    
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    })(jQuery);  
+  
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    };
+    
+    
+    
+    // joke variables for reuse
+    <% jokeQuestion = "I travel all over the world, but always stay in my corner. What am I?" %>
+    <% jokeBtnQuestion = "Tell Me!" %>
+    <% jokeAnswer = "A stamp!" %>
+    <% jokeBtnAnswer = "Again!" %>
+    
+    async function tellJoke(){
+      $('#joke-txt').addClass('scale-out');
+      $('#joke-txt').removeClass('scale-in');
+      
+      if(displaying_question){
+        document.querySelector('#joke').innerHTML = '<%= jokeAnswer %>';
+        document.querySelector('#joke-btn').innerHTML = '<%= jokeBtnAnswer %>';
+        await sleep(300);
+        displaying_question = false;
+      }
+      else {
+        document.querySelector('#joke').innerHTML = '<%= jokeQuestion %>';
+        document.querySelector('#joke-btn').innerHTML = '<%= jokeBtnQuestion %>';
+        await sleep(300);
+        displaying_question = true;
+      }
+      
+      $('#joke-txt').addClass('scale-in');
+      $('#joke-txt').removeClass('scale-out');
+    };
+    
+    function updateWeather() {
+        let city = document.getElementById('cityInput').value;
+        let state = document.getElementById('stateInput').value;
+        let cityState = city + ', ' + state;
+        getDarkSkyWeather(cityState);
+      }
+
+    function weatherBtnInit() {
+      let btn = document.getElementById("weather-btn");
+      btn.onclick = function() {
+        updateWeather();
+      }
+    };
+
+    function getDarkSkyWeather(addressString) {
+      // for testing 
+      // only for right now, addressString should be taken as parameter
+      var darkSkyApiKey = '21e7d440c2a31cfb2fca848d35caf927';
+      var darkSkyUrlPathHeader = `https://api.darksky.net/forecast/${darkSkyApiKey}/`;
+      var googleGeocodeApiKey = '&key=AIzaSyACpDnJsp7wQjuNs0Ig4SMCbUJvysmhiII';
+      var googleGeocodePathHeader = `https://maps.googleapis.com/maps/api/geocode/json?address=`;
+      
+      addressString = addressString.replace(/\s/g, '+');
+      //api key and path header available
+      let addressLatLongDict = {};
+      let requestUrl = googleGeocodePathHeader + addressString + googleGeocodeApiKey;
+      // debug 
+      console.log(requestUrl);
+      fetch(requestUrl).then(function(body) {
+        if(body.ok) {
+          return body.json();
+        }
+        else {
+          throw new Error('Network response was not ok.');
+        }
+      }).then(function(bodyObj) {
+          let address = bodyObj.results[0].formatted_address;
+          let lat = bodyObj.results[0].geometry.location.lat;
+          let long = bodyObj.results[0].geometry.location.lng;
+          addressLatLongDict = {'address': address, 'lat': lat.toString(), 'long': long.toString()};
+          return darkSkyUrlPathHeader + addressLatLongDict['lat'] + ',' + addressLatLongDict['long'];
+      }).then(function(requestUrl) {
+        console.log(requestUrl);
+        fetch(requestUrl).then(function(body) {
+          return body.json();
+        }).then(function(bodyObj) {
+          let currentlySummary = bodyObj.currently.summary;
+          let minutelySummary = bodyObj.minutely.summary;
+          let hourlySummary = bodyObj.hourly.summary;
+          let dailySummary = bodyObj.daily.summary;
+          // weatherInfo += currentlySummary + '\n';
+          let weatherInfo = minutelySummary + '\n';
+          weatherInfo += hourlySummary + '\n';
+          weatherInfo += dailySummary + '\n';
+          document.getElementById('todaySummary').innerHTML = weatherInfo;
+          document.getElementById('todayAddress').innerHTML = `Address: ${addressLatLongDict['address']}\n`;
+          let currentlyTemp = Math.round(parseFloat(bodyObj.currently.temperature));
+          document.getElementById('todayTemp').innerHTML = 'Currently: ' + currentlyTemp + '℉' + '\n';
+          document.getElementById('weatherAnimation').src = `/assets/${bodyObj.currently.icon}.mp4`; 
+          // document.getElementById('weatherAnimation').src = `/media/clear-day.mp4`; 
+          document.getElementById("weatherAnimation").playbackRate = 0.6;
+
+          // data has data, summary, and icon
+          // list through week
+          writeForecastAndTemp(bodyObj, 0, 'todayForecast', 'toDayTempHigh', 'toDayTempLow', 'toDayIcon');
+          writeForecastAndTemp(bodyObj, 1, 'oneDayForecast', 'oneDayTempHigh','oneDayTempLow', 'oneDayIcon');
+          writeForecastAndTemp(bodyObj, 2, 'twoDayForecast', 'twoDayTempHigh','twoDayTempLow', 'twoDayIcon');
+          writeForecastAndTemp(bodyObj, 3, 'threeDayForecast', 'threeDayTempHigh','threeDayTempLow', 'threeDayIcon');
+          writeForecastAndTemp(bodyObj, 4, 'fourDayForecast', 'fourDayTempHigh','fourDayTempLow', 'fourDayIcon');
+          writeForecastAndTemp(bodyObj, 5, 'fiveDayForecast', 'fiveDayTempHigh','fiveDayTempLow', 'fiveDayIcon');
+          // for (let daysFromNow = 0; daysFromNow < 6; daysFromNow++) {
+          //   writeForecastAndTemp(bodyObj, daysFromNow, 'todayForecast', 'toDayTemp');
+          // }
+          // finished listing 
+          
+          return weatherInfo;
+        })
+            
+      }).catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ', error.message);
+        window.alert('Couldn\'t find weather data for that location');
+      });
+    } 
+
+    function writeForecastAndTemp(bodyObj, daysFromNow, forecastId, dayIdHigh, dayIdLow, iconId) {
+      let todayForecastSummary = bodyObj.daily.data[daysFromNow].summary;
+      let todayForecastLow = Math.round(parseFloat(bodyObj.daily.data[daysFromNow].temperatureLow));
+      let todayForecastHigh = Math.round(parseFloat(bodyObj.daily.data[daysFromNow].temperatureHigh));
+      let iconType = bodyObj.daily.data[daysFromNow].icon;
+      document.getElementById(forecastId).innerHTML = todayForecastSummary;
+      document.getElementById(dayIdHigh).innerHTML = `High: ${todayForecastHigh}℉`;
+      document.getElementById(dayIdLow).innerHTML = `Low: ${todayForecastLow}℉`;
+      document.getElementById(iconId).src = `/assets/${iconType}.png`;
+    }
+
+
+    
+  </script>
+  
+</head>
+<body> 
+  
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+    
+  <!- joke and links -->
+  <main>
+    
+    
+    
+  <!- parralax ->
+  <div class="parallax-container main-parallax">
+    <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
+
+    <div class='row'>
+        
+     <!--   <!- joke ->-->
+     <!--   <h2 class='joke-title-txt'>-->
+     <!--     Joke of the Week-->
+     <!--   </h2>-->
+     <!--   <div class='divider'></div>-->
+     <!--   <h4 class='center scale-transition' id='joke-txt'>-->
+     <!--     <span id='joke'>-->
+     <!--     <%= jokeQuestion %>-->
+     <!--     </span>-->
+     <!--   </h4>-->
+     <!--   <div class='col offset-s6 offset-m7'>-->
+     <!--     <a class="waves-effect waves-green btn-flat" id='joke-btn' onclick='tellJoke()'><%= jokeBtnQuestion%></a>-->
+     <!--   </div>-->
+     <!-- </div>-->
+     <!--</div> -->
+     <!--   <!- end of joke ->-->
+        
+        
+        <!--weather-->
+      <div class="parallax-container">
+      <div class="row weather-row">
+        <div class="parallax grey darken-4"><video id="weatherAnimation" muted autoplay loop></video></div>
+      <div class='container'>
+        <!--weather-->
+        <div class='col s4 push-s4'>
+          <h4 class="center grey-text text-lighten-4">Weather Forecast</h4>
+        </div>
+        <div class="input-field col s1 push-s4">
+          <input value="Auburn" id="cityInput" type="text" class="validate white-text">
+          <label class="active" for="cityInput">City</label>
+        </div>
+        <div class="input-field col s1 push-s4" id='weatherInput'>
+          <input value="al" id="stateInput" type="text" class="validate white-text">
+          <label class="active" for="stateInput">State</label>
+        </div>
+        <div class="col s1 push-s4">
+          <a class="waves-effect waves-light btn grey darken-4"
+              id="weather-btn"><i class="material-icons center">cloud</i></a>
+        </div>
+        </div>
+    <div class="container">
+        <div class="col s12">
+          <h5 id='todayAddress' class="center grey-text text-lighten-4">todayAddress</h5>
+          <h5 id='todayTemp' class="center grey-text text-lighten-4">todayTemp</h5>
+          <h5 id='todaySummary' class="center grey-text text-lighten-4">todaySummary</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class='col no-padding s2'>
+        <div class='clear no-padding hoverable'>
+          <p class="center"><strong>Today</strong></p>
+          <img id='toDayIcon' class='weather-icon'>
+          <p class='center' id='todayForecast'>todayForecast</p>
+          <p class='center daytemplow' id='toDayTempLow'>toDayTemp</p>
+          <p class='center' id='toDayTempHigh'>toDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>Tomorrow</strong></p>
+          <img id='oneDayIcon' class='weather-icon'>
+          <p class='center' id='oneDayForecast'>oneDayForecast</p>
+          <p class='center' id='oneDayTempLow'>oneDayTemp</p>
+          <p class='center' id='oneDayTempHigh'>oneDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>2 Days</strong></p>
+          <img id='twoDayIcon' class='weather-icon'>
+          <p class='center' id='twoDayForecast'>twoDayForecast</p>
+          <p class='center' id='twoDayTempLow'>twoDayTemp</p>
+          <p class='center' id='twoDayTempHigh'>twoDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>3 Days</strong></p>
+          <img id='threeDayIcon' class='weather-icon'>
+          <p class='center' id='threeDayForecast'>threeDayForecast</p>
+          <p class='center' id='threeDayTempLow'>threeDayTemp</p>
+          <p class='center' id='threeDayTempHigh'>threeDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>4 Days</strong></p>
+          <img id='fourDayIcon' class='weather-icon'>
+          <p class='center' id='fourDayForecast'>fourDayForecast</p>
+          <p class='center' id='fourDayTempLow'>fourDayTemp</p>
+          <p class='center' id='fourDayTempHigh'>fourDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>5 Days</strong></p>
+          <img id='fiveDayIcon' class='weather-icon'>
+          <p class='center' id='fiveDayForecast'>fiveDayForecast</p>
+          <p class='center' id='fiveDayTempLow'>fiveDayTemp</p>
+          <p class='center' id='fiveDayTempHigh'>fiveDayTemp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+      <!- links collections -->
+      <div class='row links-row'>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">Work</h5>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://mail.google.com/mail/u/0/#inbox" 
+                  class="collection-item ">Gmail</a>
+              <a href="https://drive.google.com/drive/my-drive" 
+                  class="collection-item">Google Drive</a>
+              <a href='https://www.udemy.com/home/my-courses/learning/'
+                  class='collection-item'>Udemy</a>
+              <a href='https://c9.io/'
+                  class='collection-item'>Cloud9</a>
+              <a href='http://next.materializecss.com/'
+                  class='collection-item'>Next.Materialize</a>
+              <a href='http://web.airdroid.com/'
+                  class='collection-item'>Airdroid</a>
+            </div>  
+          </div>
+        </div>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">School</h5>
+          <div class='links-collection'>
+            <div class="collection">
+              <a href="https://michael-harrison.herokuapp.com" 
+                  class="collection-item">Michael Harrison</a>
+              <a href="https://outlook.office.com/owa/?realm=tigermail.auburn.edu" 
+                  class="collection-item">Tigermail</a>
+              <a href="https://auburn.instructure.com/?login_success=1" 
+                  class="collection-item">Canvas</a>
+              <a href="https://auaccess.auburn.edu/" 
+                  class="collection-item">Au Access</a>
+              <a href="https://scorp.herokuapp.com" 
+                  class="collection-item">Scorp</a>
+            </div>
+          </div>
+        </div>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">Time-wasters</h5>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://www.facebook.com/" 
+                  class="collection-item ">Facebook</a>
+              <a href="https://www.youtube.com/" 
+                  class="collection-item ">Youtube</a>
+              <a href="https://cronometer.com/#diary" 
+                  class="collection-item ">CRON-O-Meter</a>
+              <a href="https://netflix.com" 
+                  class="collection-item ">Netflix</a>
+            </div>
+          </div>
+        </div>  
+        
+      </div>
+      <!- end of links collections -->
+      
+      <br/>
+      <br/>
+      
+    </div> 
+    <!- end of parralax ->
+  
+  </main>
+  <!- joke and links -->
+  
+  <!- cards --> 
+  <div class='row cards'>
+    <div class='col s12 l5 offset-l1'>
+      <div class="card hoverable">
+        <div class="card-image">
+          <%= image_tag "rafa-miyao.jpg" %> 
+          <span class="card-title">
+          </span>
+        </div>
+        <div class="card-content">
+          <p>Learn some BJJ</p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.youtube.com/results?search_query=mendes+brothers"
+              target='_blank' color='#81c784'>Videos</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class='col s12 l5 '>
+      <div class="card hoverable">
+        <div class="card-image">
+          <%= image_tag "lionandthelamb.jpg" %> 
+          <span class="card-title">
+          </span>
+        </div>
+        <div class="card-content">
+          <p>Why should man expect mercy from what is above him when he shows no mercy to what is beneath him?</p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.youtube.com/watch?v=uMFt6sjPATw&index=1&list=FLvTkwJNdtJq4E3_lzgehGBw"
+              target='_blank'>Videos</a>
+        </div>
+      </div>  
+    </div>
+  </div>
+  
+  <!- end of cards --> 
+
+  <!- parralax ->
+  <div class="parallax-container">
+    <div class='handstand-parallax'>
+      <div class="parallax"><%= image_tag 'fox2.jpg' %></div>
+    </div>
+  </div>  
+  <!- end of parralax ->
+  
+  <!- earthlings ->
+  <div class='row earthlings-row'>
+    <div class='container'>
+      <div class='col s12 earthlings-text'>
+        <h4 class='earthlings-title'>Please take time to watch these...</h4>
+      </div>
+      <div class='col s12 earthlings-text'>
+        <h5 class='earthlings-title'>
+          The only <em>two reasons</em> someone is not vegan: they're <em>not educated</em> or they're just <em>arrogant</em>.
+        </h5>
+      </div>
+      <div class='col s12 center '>
+        <a href="http://www.nationearth.com/earthlings-1/" 
+            class="center earthlings-link ">-Earthlings-
+        </a> 
+      </div>
+      <div class='col s12 center'>
+        <h5 id='or-txt'>and</h5>
+      </div>
+      <div class='col s12 center '>
+        <a href="https://www.youtube.com/watch?v=W4HJcq8qHAY" 
+            class="center earthlings-link ">-Reasons to go Vegan-
+        </a> 
+      </div>
+    </div>
+  </div>
+  <!- end of earthlings ->
+  
+  
+</body>
+
+
+<script>
+  weatherBtnInit();
+  updateWeather();
+    
+</script>
+
+  
+</html>

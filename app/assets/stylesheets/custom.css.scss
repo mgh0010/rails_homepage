@@ -1,0 +1,289 @@
+@import 'materialize';
+$primary-color: color("red", 'base') !default;
+$secondary-color: color("grey", "base") !default;
+
+.earthlings-row {
+  @extend .red, .darken-1;
+  margin-bottom: 0 !important;
+}
+
+.earthlings-title {
+  text-align: center;
+}
+
+.earthlings-link {
+  text-align: center;
+  @extend .grey-text, .text-darken-2;
+  font-size: 4em;
+}
+
+#or-txt {
+  margin: 0;
+}
+
+.vegan-img {
+  height: 3em;
+  widows: 3em;
+}
+
+.earthlings-text {
+  text-align: center;
+}
+
+.parallax-container {
+  height: auto !important;
+}
+
+.aa-parallax {
+  height: auto !important;
+}
+
+.handstand-parallax {
+  height: 30em !important;
+}
+
+.centered-txt {
+  text-align: center;
+}
+
+.title-text {
+  padding-top: .5em;
+  text-align: center;
+  padding-bottom: .5em;
+  margin-top: 0em;
+  @extend .grey-text, .text-darken-4;
+}
+
+.title-div {
+  background-color: #BBC47F;
+}
+
+.joke-title-txt {
+  text-align: center;
+  @extend .grey-text, .text-darken-4;
+}
+
+.header {
+  text-align: center;
+  @extend .grey-text, .text-darken-3;
+}
+
+
+.links-collection {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.links-row {
+  margin-top: 3em;
+}
+
+.ribbon-section {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+p {
+  @extend .flow-text;
+}
+
+.ribbon-row {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.ribbon-col {
+  height: 5em;
+  text-align: center;
+}
+
+.ribbon-col > a > i {
+  position: relative;
+  top: calc(50% - 15px); /* 50% - 3/4 of icon height */
+}
+
+.square-col {
+  text-align: center;
+  padding: 0 .1em;
+}
+
+.square {
+  height: 9em;
+  margin: .1em;
+  @extend .hoverable;
+}
+
+.square > i {
+  position: relative;
+  top: calc(50% - 15px); /* 50% - 3/4 of icon height */
+}
+
+.ribbon-col > a {
+  text-decoration: none;
+  color: black;
+}
+
+.ribbon-col > a:hover {
+  color: white;
+}
+
+.collection
+a.collection-item {
+  background: rgba(0, 0, 0, 0.3);
+  @extend .grey-text, .text-lighten-3;
+  
+}
+
+.aside-col {
+  margin-left: 20px;
+}
+
+.div-above-aside {
+  height: 50px;
+}
+
+/* label color */
+ .input-field label {
+   @extend .grey-text, .text-darken-2
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   @extend .teal-text
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid; 
+   @extend .teal-text, .text-lighten-2;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ 
+ 
+ .btn {
+   background-color: #26a69a;
+ }
+ 
+ .btn:hover {
+   background-color: #80cbc4;
+ }
+ 
+ .new-link-btn {
+   margin-top: 2em;
+ }
+ 
+ .actions {
+   margin-top: 2em;
+ }
+ 
+ .dark-text {
+   @extend .grey-text, .text-darken-4;
+ }
+ 
+ .light-text {
+   @extend .grey-text, .text-lighten-4;
+ }
+ 
+ .food-img {
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .yellow-car {
+   background-color: #EAB364;
+ }
+ 
+ .blue-car {
+   background-color: #A4CABC;
+ }
+ 
+ .green-car {
+   background-color: #ACBD78;
+ }
+ 
+ .red-car {
+   background-color: #B2473E;
+ }
+ 
+ #joke-txt {
+   margin-top: 1em;
+ }
+ 
+ a:link {
+   color: #81c784;
+ }
+ 
+ .cards {
+   margin-top: 2em;
+ }
+ 
+ .terrier-parallax {
+  height: 900px;
+ }
+ 
+.sum-gal-row {
+  @extend .grey, .darken-4;
+  margin-bottom: 0 !important;
+}
+
+ #sum-gal-header {
+   margin: 0;
+   padding-top: 1.5em;
+   padding-bottom: 1em;
+ }
+ 
+ 
+ #sum-gal-body {
+   padding-bottom: 4em;
+ }
+ 
+ .gal-collection {
+    margin-top: 2em !important;
+ }
+
+.weather-icon {
+  max-width:100%;
+  max-height:100%;
+}
+
+.parallax-container {
+  height: 300px;
+}
+
+.parallax video {
+    // @media #{$small-and-down} { max-width: 200%; }
+    // @media #{$medium-and-up} { width: 100%; }
+}
+
+p .dayTempLow {
+  margin-bottom: 0 !important;
+}
+
+p .dayTempHigh {
+  margin-top: 0 !important;
+}
+
+.video {
+  z-index: -99;
+  height: 300px;
+}
+
+#weather-btn {
+  margin-top: 26px;
+  /*padding: 0;*/
+  /*width: 40px !important;*/
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.card-panel {
+  background: rgba(0,0,0,0.3);
+}
+
+.clear {
+  background: rgba(0,0,0,0.3);
+}

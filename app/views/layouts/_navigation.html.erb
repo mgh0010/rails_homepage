@@ -1,0 +1,40 @@
+ <!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+<script>
+  $(document).ready(function(){
+    $(".button-collapse").sideNav({edge: 'right'});
+  })(jQuery);  
+</script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+<div class='navbar-fixed'>
+  <nav>
+    <div class="nav-wrapper grey darken-3">
+      <div class='row'>
+        <div class='col l1 '>
+          <%= link_to "Relax, dawg", root_path, class: 'brand-logo logo light-text', id: 'logo' %>
+        </div>
+        <div class='col l11 right'>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="food.html.erb"><i class="material-icons">store</i></a></li>
+            <li><a href="aboutme.html.erb"><i class="material-icons">person_pin</i></a></li>
+            <li><a href="finalexamcalc.html.erb"><i class="material-icons">assessment</i></a></li>
+            <li><a href="helpfullinks.html.erb"><i class="material-icons">more_vert</i></a></li>
+          </ul>
+          
+        </div>
+      </div>
+      
+    </div>
+  </nav> 
+</div>
+<ul class="side-nav" id="mobile-demo">
+  <li><a href="food.html.erb"><i class="material-icons">store</i> Daily Food</a></li>
+  <li><a href="aboutme.html.erb"><i class="material-icons">person_pin</i>About Me</a></li>
+  <li><a href="finalexamcalc.html.erb"><i class="material-icons">refresh</i></a></li>
+    <li><a href="helpfullinks.html.erb"><i class="material-icons">more_vert</i></a></li>
+</ul>
+

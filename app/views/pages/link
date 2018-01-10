@@ -1,0 +1,188 @@
+<html>
+<head>
+
+   <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    })(jQuery);  
+  
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    };
+    
+    document.getElementById('joke-btn').onclick = async function(){
+      $('#joke-txt').addClass('scale-out');
+      document.getElementById('joke').innerHTML = 'You just need to jump higher.';
+      await sleep(50);
+      $('#joke-txt').addClass('scale-in');
+    };
+    
+  </script>
+  
+<header></header>
+</head>
+<body> 
+  
+  
+  <!- main content -->
+  <main>
+    
+  <!- parralax ->
+  <div class="parallax-container main-parallax">
+    <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
+
+     <div class='row'>
+      <div class='container'>
+        
+        <!- joke ->
+        <h2 class='title-text'>
+          Joke of the Day
+        </h2>
+        <div class='divider'></div>
+        <h4 class='center scale-transition' id='joke-txt'>
+          <span id='joke'>
+          What did the red lizard say to the cat?
+          </span>
+        </h4>
+        <div class='col offset-s8'>
+          <a class="waves-effect waves-green btn-flat" id='joke-btn'>Tell me!</a>
+        </div>
+      </div>
+     </div> 
+        <!- end of joke ->
+        
+      <div class='row'>
+        <div class=' divider col s4 offset-s4'></div>
+      </div>
+      
+      <!- links collections -->
+      <div class='row'>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">Work</h5>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://mail.google.com/mail/u/0/#inbox" 
+                  class="collection-item ">Gmail</a>
+              <a href="https://drive.google.com/drive/my-drive" 
+                  class="collection-item">Google Drive</a>
+              <a href='https://www.udemy.com/home/my-courses/learning/'
+                  class='collection-item'>Udemy</a>
+              <a href='https://c9.io/'
+                  class='collection-item'>Cloud9</a>
+              <a href='http://materializecss.com/'
+                  class='collection-item'>Materialize</a>
+              <a href='http://web.airdroid.com/'
+                  class='collection-item'>Airdroid</a>
+            </div>  
+          </div>
+        </div>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">School</h5>
+          <div class='links-collection'>
+            <div class="collection">
+              <a href="https://outlook.office.com/owa/?realm=tigermail.auburn.edu" 
+                  class="collection-item">Tigermail</a>
+              <a href="https://auburn.instructure.com/?login_success=1" 
+                  class="collection-item">Canvas</a>
+              <a href="https://auaccess.auburn.edu/" 
+                  class="collection-item">Au Access</a>
+            </div>
+          </div>
+        </div>
+        <div class='col s12 m12 l4'>
+          <h5 class="header">Time-wasters</h5>
+          <div class='links-container'>
+            <div class="collection">
+              <a href="https://www.facebook.com/" 
+                  class="collection-item ">Facebook</a>
+              <a href="https://www.youtube.com/" 
+                  class="collection-item ">Youtube</a>
+              <a href="https://cronometer.com/#diary" 
+                  class="collection-item ">CRON-O-Meter</a>
+              <a href="https://netflix.com" 
+                  class="collection-item ">Netflix</a>
+            </div>
+          </div>
+        </div>  
+        
+      </div>
+      <!- end of links collections -->
+      
+      <br/>
+      <br/>
+      
+    </div> 
+  </div>  
+  <!- end of parralax ->
+  
+  </main>
+  <!- end of main content -->
+  
+  <!- cards --> 
+  <!- title ->
+  <div class='container'>
+    <div class='divider'></div>
+    <div class='section'>
+      <div class='row'>
+        <div class='col s6'>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!- end of title ->
+  
+  <div class='row'>
+    <div class='col s12 l5 offset-l1'>
+      <div class="card hoverable">
+        <div class="card-image">
+          <%= image_tag "rafa-miyao.jpg" %> 
+          <span class="card-title">
+          </span>
+        </div>
+        <div class="card-content">
+          <p>Learn some BJJ</p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.youtube.com/results?search_query=mendes+brothers"
+              target='_blank'>Videos</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class='col s12 l5 '>
+      <div class="card hoverable">
+        <div class="card-image">
+          <%= image_tag "lionandthelamb.jpg" %> 
+          <span class="card-title">
+          </span>
+        </div>
+        <div class="card-content">
+          <p>Why should man expect mercy from what is above him when he shows no mercy to what is beneath him?</p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.youtube.com/watch?v=uMFt6sjPATw&index=1&list=FLvTkwJNdtJq4E3_lzgehGBw"
+              target='_blank'>Videos</a>
+        </div>
+      </div>  
+    </div>
+  </div>
+  
+  <!- end of cards --> 
+
+  <!- parralax ->
+  <div class="parallax-container">
+    <div class='handstand-parallax'>
+      <div class="parallax"><%= image_tag 'fox2.jpg' %></div>
+    </div>
+  </div>  
+  <!- end of parralax ->
+  
+  
+</body>
+
+  
+</html>
