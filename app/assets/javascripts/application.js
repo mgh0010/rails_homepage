@@ -14,7 +14,4 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
-<<<<<<< HEAD
 
-=======
->>>>>>> 5f2c4e10d85afc646fc5d3037ffaaf114f47dc53
