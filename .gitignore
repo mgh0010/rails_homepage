@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
+=======
+/assets/videos/*
+>>>>>>> 404330f... no videos
