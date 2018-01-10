@@ -182,6 +182,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.16.1
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,3 +193,6 @@ BUNDLED WITH
 =======
    1.16.1
 >>>>>>> 97cb692... gemfile.lock new
+=======
+   1.13.6
+>>>>>>> e09d159... 1.13.6 gemfile bundled with
