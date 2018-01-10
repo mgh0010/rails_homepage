@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
-  
-  resources :links
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  
-  root 'pages#links'
-  get 'food.html.erb', to: 'pages#food'
-  get 'aboutme.html.erb', to: 'pages#aboutme'
-  get 'finalexamcalc.html.erb', to: 'pages#finalexamcalc'
-  get 'helpfullinks.html.erb', to: 'pages#helpfullinks'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
