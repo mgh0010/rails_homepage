@@ -14,11 +14,4 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 404330f... no videos
-=======
-
->>>>>>> 10a4b2d... new
