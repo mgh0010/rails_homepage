@@ -5,10 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
 end
 
 group :production do
+  gem 'pg', '~> 0.20'
   #used to make paths accessible on heroku
   gem 'rails_12factor'
 end
