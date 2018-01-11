@@ -132,7 +132,10 @@
       document.getElementById(forecastId).innerHTML = todayForecastSummary;
       document.getElementById(dayIdHigh).innerHTML = `High: ${todayForecastHigh}℉`;
       document.getElementById(dayIdLow).innerHTML = `Low: ${todayForecastLow}℉`;
-      document.getElementById(iconId).src = `/assets/${iconType}.png`;
+      if(iconType.contains('clear-day')) {
+        document.getElementById(iconId).src = `/assets/clear-day-a6ba9fa383e60bcf0cf3473a1a43ec9baf8f4bf96cb6f3ca4364a24d9ffca7c3.png`;
+      }
+      // document.getElementById(iconId).src = `/assets/${iconType}.png`;
     }
 
 
