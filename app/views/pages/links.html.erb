@@ -68,7 +68,7 @@
       let requestUrl = googleGeocodePathHeader + addressString + googleGeocodeApiKey;
       // debug 
       console.log(requestUrl);
-      fetch(requestUrl).then(function(body) {
+      fetch(requestUrl, { method: 'GET' }).then(function(body) {
         if(body.ok) {
           return body.json();
         }
@@ -83,7 +83,7 @@
           return darkSkyUrlPathHeader + addressLatLongDict['lat'] + ',' + addressLatLongDict['long'];
       }).then(function(requestUrl) {
         console.log(requestUrl);
-        fetch(requestUrl).then(function(body) {
+        fetch(requestUrl, { method: 'GET' }).then(function(body) {
           return body.json();
         }).then(function(bodyObj) {
           let currentlySummary = bodyObj.currently.summary;
@@ -241,67 +241,7 @@
   <!- parralax ->
   <div class="parallax-container main-parallax">
     <div class="parallax"><img src='assets/fox1-c1d80bcc7b1a63731e6eb536e93822455a000ee3441893ba6cbc70269dbe3159.jpg'></div>
-  <!--daily summary-->
-  <div class="container">
-    <div class="row">
-      <div class='col no-padding s2'>
-        <div class='clear no-padding hoverable'>
-          <p class="center"><strong>Today</strong></p>
-          <img id='toDayIcon' class='weather-icon'>
-          <p class='center' id='todayForecast'>todayForecast</p>
-          <p class='center daytemplow' id='toDayTempLow'>toDayTemp</p>
-          <p class='center' id='toDayTempHigh'>toDayTemp</p>
-        </div>
-      </div>
-      <div class='col no-padding s2'>
-        <div class="clear no-padding hoverable">
-          <p class="center"><strong>Tomorrow</strong></p>
-          <img id='oneDayIcon' class='weather-icon'>
-          <p class='center' id='oneDayForecast'>oneDayForecast</p>
-          <p class='center' id='oneDayTempLow'>oneDayTemp</p>
-          <p class='center' id='oneDayTempHigh'>oneDayTemp</p>
-        </div>
-      </div>
-      <div class='col no-padding s2'>
-        <div class="clear no-padding hoverable">
-          <p class="center"><strong>2 Days</strong></p>
-          <img id='twoDayIcon' class='weather-icon'>
-          <p class='center' id='twoDayForecast'>twoDayForecast</p>
-          <p class='center' id='twoDayTempLow'>twoDayTemp</p>
-          <p class='center' id='twoDayTempHigh'>twoDayTemp</p>
-        </div>
-      </div>
-      <div class='col no-padding s2'>
-        <div class="clear no-padding hoverable">
-          <p class="center"><strong>3 Days</strong></p>
-          <img id='threeDayIcon' class='weather-icon'>
-          <p class='center' id='threeDayForecast'>threeDayForecast</p>
-          <p class='center' id='threeDayTempLow'>threeDayTemp</p>
-          <p class='center' id='threeDayTempHigh'>threeDayTemp</p>
-        </div>
-      </div>
-      <div class='col no-padding s2'>
-        <div class="clear no-padding hoverable">
-          <p class="center"><strong>4 Days</strong></p>
-          <img id='fourDayIcon' class='weather-icon'>
-          <p class='center' id='fourDayForecast'>fourDayForecast</p>
-          <p class='center' id='fourDayTempLow'>fourDayTemp</p>
-          <p class='center' id='fourDayTempHigh'>fourDayTemp</p>
-        </div>
-      </div>
-      <div class='col no-padding s2'>
-        <div class="clear no-padding hoverable">
-          <p class="center"><strong>5 Days</strong></p>
-          <img id='fiveDayIcon' class='weather-icon'>
-          <p class='center' id='fiveDayForecast'>fiveDayForecast</p>
-          <p class='center' id='fiveDayTempLow'>fiveDayTemp</p>
-          <p class='center' id='fiveDayTempHigh'>fiveDayTemp</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--end of daily summary-->
-        
+  
       <div class='container'>
       <!- links collections -->
       <div class='row links-row'>
@@ -358,7 +298,65 @@
         </div>  
       </div>
       <!- end of links collections -->
-      
+  <!--daily summary-->
+    <div class="row">
+      <div class='col no-padding s2'>
+        <div class='clear no-padding hoverable'>
+          <p class="center"><strong>Today</strong></p>
+          <img id='toDayIcon' class='weather-icon'>
+          <p class='center' id='todayForecast'>todayForecast</p>
+          <p class='center daytemplow' id='toDayTempLow'>toDayTemp</p>
+          <p class='center' id='toDayTempHigh'>toDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>Tomorrow</strong></p>
+          <img id='oneDayIcon' class='weather-icon'>
+          <p class='center' id='oneDayForecast'>oneDayForecast</p>
+          <p class='center' id='oneDayTempLow'>oneDayTemp</p>
+          <p class='center' id='oneDayTempHigh'>oneDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>2 Days</strong></p>
+          <img id='twoDayIcon' class='weather-icon'>
+          <p class='center' id='twoDayForecast'>twoDayForecast</p>
+          <p class='center' id='twoDayTempLow'>twoDayTemp</p>
+          <p class='center' id='twoDayTempHigh'>twoDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>3 Days</strong></p>
+          <img id='threeDayIcon' class='weather-icon'>
+          <p class='center' id='threeDayForecast'>threeDayForecast</p>
+          <p class='center' id='threeDayTempLow'>threeDayTemp</p>
+          <p class='center' id='threeDayTempHigh'>threeDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>4 Days</strong></p>
+          <img id='fourDayIcon' class='weather-icon'>
+          <p class='center' id='fourDayForecast'>fourDayForecast</p>
+          <p class='center' id='fourDayTempLow'>fourDayTemp</p>
+          <p class='center' id='fourDayTempHigh'>fourDayTemp</p>
+        </div>
+      </div>
+      <div class='col no-padding s2'>
+        <div class="clear no-padding hoverable">
+          <p class="center"><strong>5 Days</strong></p>
+          <img id='fiveDayIcon' class='weather-icon'>
+          <p class='center' id='fiveDayForecast'>fiveDayForecast</p>
+          <p class='center' id='fiveDayTempLow'>fiveDayTemp</p>
+          <p class='center' id='fiveDayTempHigh'>fiveDayTemp</p>
+        </div>
+      </div>
+    </div>
+  <!--end of daily summary-->
+            
       <br/>
       <br/>
       
@@ -368,7 +366,6 @@
     <!- end of parralax ->
   
   </main>
-  <!- joke and links -->
   
   <!- cards --> 
   <div class='row cards'>
@@ -406,7 +403,6 @@
       </div>  
     </div>
   </div>
-  
   <!- end of cards --> 
 
   <!- parralax ->
@@ -451,7 +447,6 @@
 <script>
   weatherBtnInit();
   updateWeather();
-    
 </script>
 
   
