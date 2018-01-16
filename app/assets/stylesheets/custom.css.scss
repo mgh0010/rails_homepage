@@ -223,6 +223,10 @@ a.collection-item {
   height: 900px;
  }
  
+.weather-row {
+  margin-bottom: 0 !important;
+}
+ 
 .sum-gal-row {
   @extend .grey, .darken-4;
   margin-bottom: 0 !important;

@@ -98,9 +98,9 @@
           document.getElementById('todayAddress').innerHTML = `Address: ${addressLatLongDict['address']}\n`;
           let currentlyTemp = Math.round(parseFloat(bodyObj.currently.temperature));
           document.getElementById('todayTemp').innerHTML = 'Currently: ' + currentlyTemp + '℉' + '\n';
-          document.getElementById('weatherAnimation').src = `/assets/${bodyObj.currently.icon}.mp4`; 
+          // document.getElementById('weatherAnimation').src = `/assets/${bodyObj.currently.icon}.mp4`; 
           // document.getElementById('weatherAnimation').src = `/media/clear-day.mp4`; 
-          document.getElementById("weatherAnimation").playbackRate = 0.6;
+          // document.getElementById("weatherAnimation").playbackRate = 0.6;
 
           // data has data, summary, and icon
           // list through week
@@ -190,13 +190,9 @@
   <!- joke and links -->
   <main>
     
-  <!- parralax ->
-  <div class="parallax-container main-parallax">
-    <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
 
-    <div class='row'>
-        
      <!--   <!- joke ->-->
+    <!--<div class='row'>-->
      <!--   <h2 class='joke-title-txt'>-->
      <!--     Joke of the Week-->
      <!--   </h2>-->
@@ -214,36 +210,38 @@
      <!--   <!- end of joke ->-->
         
         
-        <!--weather-->
-      <div class="parallax-container">
-      <div class="row weather-row">
-        <div class="parallax grey darken-4"><video id="weatherAnimation" muted autoplay loop></video></div>
-      <div class='container'>
-        <!--weather-->
-        <div class='col s4 push-s4'>
-          <h4 class="center grey-text text-lighten-4">Weather Forecast</h4>
-        </div>
-        <div class="input-field col s1 push-s4">
-          <input value="Auburn" id="cityInput" type="text" class="validate white-text">
-          <label class="active" for="cityInput">City</label>
-        </div>
-        <div class="input-field col s1 push-s4" id='weatherInput'>
-          <input value="al" id="stateInput" type="text" class="validate white-text">
-          <label class="active" for="stateInput">State</label>
-        </div>
-        <div class="col s1 push-s4">
-          <a class="waves-effect waves-light btn grey darken-4"
-              id="weather-btn"><i class="material-icons center">cloud</i></a>
-        </div>
-        </div>
-    <div class="container">
-        <div class="col s12">
-          <h5 id='todayAddress' class="center grey-text text-lighten-4">todayAddress</h5>
-          <h5 id='todayTemp' class="center grey-text text-lighten-4">todayTemp</h5>
-          <h5 id='todaySummary' class="center grey-text text-lighten-4">todaySummary</h5>
-        </div>
+    <!--weather-->
+  <div class="row weather-row grey darken-4">
+    <!--<div class="parallax grey darken-4"><video id="weatherAnimation" muted autoplay loop></video></div>-->
+    <div class='container'>
+      <!--weather-->
+      <div class='col s4 push-s4'>
+        <h4 class="center grey-text text-lighten-4">Weather Forecast</h4>
+      </div>
+      <div class="input-field col s1 push-s4">
+        <input value="Auburn" id="cityInput" type="text" class="validate white-text">
+        <label class="active" for="cityInput">City</label>
+      </div>
+      <div class="input-field col s1 push-s4" id='weatherInput'>
+        <input value="al" id="stateInput" type="text" class="validate white-text">
+        <label class="active" for="stateInput">State</label>
+      </div>
+      <div class="col s1 push-s4">
+        <a class="waves-effect waves-light btn grey darken-4"
+            id="weather-btn"><i class="material-icons center">cloud</i></a>
+      </div>
+      <div class="col s12">
+        <h5 id='todayAddress' class="center grey-text text-lighten-4">todayAddress</h5>
+        <h5 id='todayTemp' class="center grey-text text-lighten-4">todayTemp</h5>
+        <h5 id='todaySummary' class="center grey-text text-lighten-4">todaySummary</h5>
       </div>
     </div>
+  </div>
+  
+  <!- parralax ->
+  <div class="parallax-container main-parallax">
+    <div class="parallax"><%= image_tag 'fox1.jpg' %></div>
+  <!--daily summary-->
   <div class="container">
     <div class="row">
       <div class='col no-padding s2'>
@@ -302,9 +300,9 @@
       </div>
     </div>
   </div>
-  </div>
+  <!--end of daily summary-->
+        
       <div class='container'>
-      
       <!- links collections -->
       <div class='row links-row'>
         <div class='col s12 m12 l4'>
@@ -358,12 +356,13 @@
             </div>
           </div>
         </div>  
-        
       </div>
       <!- end of links collections -->
       
       <br/>
       <br/>
+      
+      </div>
       
     </div> 
     <!- end of parralax ->
