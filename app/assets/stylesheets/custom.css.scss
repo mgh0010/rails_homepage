@@ -30,11 +30,11 @@ $secondary-color: color("grey", "base") !default;
   text-align: center;
 }
 
-.parallax-container {
-  height: auto !important;
+.parallax img {
+  display: block !important;
 }
 
-.aa-parallax {
+.parallax-container {
   height: auto !important;
 }
 
@@ -219,7 +219,7 @@ a.collection-item {
    margin-top: 2em;
  }
  
- .terrier-parallax {
+.terrier-parallax {
   height: 900px;
  }
  
@@ -250,15 +250,6 @@ a.collection-item {
 .weather-icon {
   max-width:100%;
   max-height:100%;
-}
-
-.parallax-container {
-  height: 300px;
-}
-
-.parallax video {
-    // @media #{$small-and-down} { max-width: 200%; }
-    // @media #{$medium-and-up} { width: 100%; }
 }
 
 p .dayTempLow {
