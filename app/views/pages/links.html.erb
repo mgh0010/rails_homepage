@@ -129,7 +129,7 @@
             
       }).catch(function(error) {
         console.log('There has been a problem with your fetch operation: ', error.message);
-        window.alert('Couldn\'t find weather data for that location');
+        // window.alert('Couldn\'t find weather data for that location');
       });
     } 
 
@@ -240,9 +240,9 @@
             id="weather-btn"><i class="material-icons center">cloud</i></a>
       </div>
       <div class="col s12">
-        <h5 id='todayAddress' class="center grey-text text-lighten-4">todayAddress</h5>
-        <h5 id='todayTemp' class="center grey-text text-lighten-4">todayTemp</h5>
-        <h5 id='todaySummary' class="center grey-text text-lighten-4">todaySummary</h5>
+        <h5 id='todayAddress' class="center grey-text text-lighten-4"></h5>
+        <h5 id='todayTemp' class="center grey-text text-lighten-4"></h5>
+        <h5 id='todaySummary' class="center grey-text text-lighten-4"></h5>
       </div>
     </div>
   </div>
@@ -315,54 +315,54 @@
         <div class='clear no-padding hoverable'>
           <p class="center"><strong>Today</strong></p>
           <img id='toDayIcon' class='weather-icon'>
-          <p class='center' id='todayForecast'>todayForecast</p>
-          <p class='center daytemplow' id='toDayTempLow'>toDayTemp</p>
-          <p class='center' id='toDayTempHigh'>toDayTemp</p>
+          <p class='center' id='todayForecast'></p>
+          <p class='center daytemplow' id='toDayTempLow'></p>
+          <p class='center' id='toDayTempHigh'></p>
         </div>
       </div>
       <div class='col no-padding s2'>
         <div class="clear no-padding hoverable">
           <p class="center"><strong>Tomorrow</strong></p>
           <img id='oneDayIcon' class='weather-icon'>
-          <p class='center' id='oneDayForecast'>oneDayForecast</p>
-          <p class='center' id='oneDayTempLow'>oneDayTemp</p>
-          <p class='center' id='oneDayTempHigh'>oneDayTemp</p>
+          <p class='center' id='oneDayForecast'></p>
+          <p class='center' id='oneDayTempLow'></p>
+          <p class='center' id='oneDayTempHigh'></p>
         </div>
       </div>
       <div class='col no-padding s2'>
         <div class="clear no-padding hoverable">
           <p class="center"><strong>2 Days</strong></p>
           <img id='twoDayIcon' class='weather-icon'>
-          <p class='center' id='twoDayForecast'>twoDayForecast</p>
-          <p class='center' id='twoDayTempLow'>twoDayTemp</p>
-          <p class='center' id='twoDayTempHigh'>twoDayTemp</p>
+          <p class='center' id='twoDayForecast'></p>
+          <p class='center' id='twoDayTempLow'></p>
+          <p class='center' id='twoDayTempHigh'></p>
         </div>
       </div>
       <div class='col no-padding s2'>
         <div class="clear no-padding hoverable">
           <p class="center"><strong>3 Days</strong></p>
           <img id='threeDayIcon' class='weather-icon'>
-          <p class='center' id='threeDayForecast'>threeDayForecast</p>
-          <p class='center' id='threeDayTempLow'>threeDayTemp</p>
-          <p class='center' id='threeDayTempHigh'>threeDayTemp</p>
+          <p class='center' id='threeDayForecast'></p>
+          <p class='center' id='threeDayTempLow'></p>
+          <p class='center' id='threeDayTempHigh'></p>
         </div>
       </div>
       <div class='col no-padding s2'>
         <div class="clear no-padding hoverable">
           <p class="center"><strong>4 Days</strong></p>
           <img id='fourDayIcon' class='weather-icon'>
-          <p class='center' id='fourDayForecast'>fourDayForecast</p>
-          <p class='center' id='fourDayTempLow'>fourDayTemp</p>
-          <p class='center' id='fourDayTempHigh'>fourDayTemp</p>
+          <p class='center' id='fourDayForecast'></p>
+          <p class='center' id='fourDayTempLow'></p>
+          <p class='center' id='fourDayTempHigh'></p>
         </div>
       </div>
       <div class='col no-padding s2'>
         <div class="clear no-padding hoverable">
           <p class="center"><strong>5 Days</strong></p>
           <img id='fiveDayIcon' class='weather-icon'>
-          <p class='center' id='fiveDayForecast'>fiveDayForecast</p>
-          <p class='center' id='fiveDayTempLow'>fiveDayTemp</p>
-          <p class='center' id='fiveDayTempHigh'>fiveDayTemp</p>
+          <p class='center' id='fiveDayForecast'></p>
+          <p class='center' id='fiveDayTempLow'></p>
+          <p class='center' id='fiveDayTempHigh'></p>
         </div>
       </div>
     </div>
