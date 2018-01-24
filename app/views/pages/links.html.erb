@@ -68,16 +68,14 @@
       let requestUrl = googleGeocodePathHeader + addressString + googleGeocodeApiKey;
       // debug 
       console.log(requestUrl);
-      let myHeaders = new Headers({'Access-Control-Allow-Origin': '*', 
-                                                  'Access-Control-Allow-Methods': 'POST, GET, PUT, PATCH, DELETE, OPTIONS',
-                                                  'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization, Token, Auth-Token, Email',
-                                                  'Access-Control-Max-Age': "1728000"
-      })
-      let myInit = { method: 'GET',
-               headers: myHeaders,
-               mode: 'cors',
-               cache: 'default' };
-      fetch(requestUrl, myInit).then(function(body) {
+      // let myHeaders = new Headers({'Access-Control-Allow-Origin': '*', 
+      //                                             'Access-Control-Allow-Methods': 'POST, GET, PUT, PATCH, DELETE, OPTIONS',
+      //                                             'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization, Token, Auth-Token, Email',
+      //                                             'Access-Control-Max-Age': "1728000"
+      // })
+      let myInit = new Headers({'Access-Control-Allow-Origin': '*'
+      });
+      fetch(requestUrl).then(function(body) {
         if(body.ok) {
           return body.json();
         }
@@ -92,7 +90,7 @@
           return darkSkyUrlPathHeader + addressLatLongDict['lat'] + ',' + addressLatLongDict['long'];
       }).then(function(requestUrl) {
         console.log(requestUrl);
-        fetch(requestUrl, myInit).then(function(body) {
+        fetch(requestUrl).then(function(body) {
           return body.json();
         }).then(function(bodyObj) {
           let currentlySummary = bodyObj.currently.summary;
@@ -287,6 +285,8 @@
                   class="collection-item">Au Access</a>
               <a href="https://scorp.herokuapp.com" 
                   class="collection-item">Scorp</a>
+              <a href="https://www.masteringaandp.com/site/login.html" 
+                  class="collection-item">Mastering A&P</a>
             </div>
           </div>
         </div>

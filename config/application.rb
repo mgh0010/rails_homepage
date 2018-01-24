@@ -19,7 +19,16 @@ module Workspace
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+     config.middleware.insert_before 0, "Rack::Cors", :debug => true, :logger => (-> {Rails.logger }) do
+    allow do
+      origins 'localhost:4000'
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
+      resource '*',
+        :headers => :any,
+        :methods => [:get, :post, :delete, :put, :options, :head, :patch],
+        :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+        :max_age => 0
+    end
+  end  
   end
 end

@@ -32,7 +32,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    arel (6.0.4)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
@@ -80,6 +79,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
     rack (1.6.8)
+    rack-cors (1.0.2)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -165,6 +165,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pg (~> 0.20)
+  rack-cors
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)
